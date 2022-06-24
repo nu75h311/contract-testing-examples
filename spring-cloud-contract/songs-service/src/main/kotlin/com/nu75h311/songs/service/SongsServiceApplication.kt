@@ -1,4 +1,4 @@
-package com.nu75h311.songs
+package com.nu75h311.songs.service
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
