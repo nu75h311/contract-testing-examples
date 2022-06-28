@@ -9,6 +9,9 @@ contract {
     }
     response {
         status = OK
+        headers {
+            contentType = "application/json"
+        }
         body = body(
             listOf(
                 mapOf(
