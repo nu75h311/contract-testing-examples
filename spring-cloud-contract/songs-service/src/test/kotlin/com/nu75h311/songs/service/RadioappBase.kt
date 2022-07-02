@@ -2,6 +2,7 @@ package com.nu75h311.songs.service
 
 import io.restassured.module.mockmvc.RestAssuredMockMvc
 import org.junit.jupiter.api.BeforeEach
+import org.mockito.ArgumentMatchers.anyString
 import org.mockito.Mock
 import org.mockito.Mockito
 import org.springframework.boot.test.context.SpringBootTest
@@ -17,9 +18,16 @@ class RadioappBase {
     fun setup() {
 
         Mockito.`when`(songRepositoryMock.findAll()).thenReturn(
-            listOf(
+            mutableListOf(
                 Song(UUID.randomUUID(), "Xanadu", "Rush"),
-                Song(UUID.randomUUID(), "Some", "Other")
+                Song(UUID.randomUUID(), "Lithium", "Nirvana")
+            )
+        )
+
+        Mockito.`when`(songRepositoryMock.findAllByArtist(anyString())).thenReturn(
+            mutableListOf(
+                Song(UUID.randomUUID(), "Xanadu", "Rush"),
+                Song(UUID.randomUUID(), "XXY", "Rush")
             )
         )
 

@@ -25,7 +25,7 @@ internal class SongsServiceTest {
         val songList = service.getListOfSongNames()
 
         assertAll("song names",
-            { assertThat(songList).containsExactly("Xanadu") }
+            { assertThat(songList).containsExactlyInAnyOrder("Sliver", "Xanadu") }
         )
     }
 }

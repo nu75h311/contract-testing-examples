@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*
 class SongController(val service: SongService) {
 
     @GetMapping()
-    fun getSongs(@RequestParam artist: String?): MutableIterable<Song> {
+    fun getSongs(@RequestParam artist: String?): List<Song> {
         return if (artist == null) service.findSongs()
         else service.findSongsByArtist(artist) //add this as an exercise
     }

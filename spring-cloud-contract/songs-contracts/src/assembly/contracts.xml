@@ -8,7 +8,7 @@
     <includeBaseDirectory>false</includeBaseDirectory>
     <fileSets>
         <fileSet>
-            <directory>${project.basedir}</directory>
+            <directory>${project.basedir}/src/main/resources</directory>
             <outputDirectory>/</outputDirectory>
             <useDefaultExcludes>true</useDefaultExcludes>
             <excludes>
@@ -19,6 +19,7 @@
                 <exclude>**/gradlew.bat</exclude>
                 <exclude>**/gradle.properties</exclude>
                 <exclude>**/.mvn/**</exclude>
+                <exclude>**/pom.xml</exclude>
                 <exclude>**/gradle/**</exclude>
                 <exclude>**/*.gradle</exclude>
                 <exclude>**/src/assembly/**</exclude>

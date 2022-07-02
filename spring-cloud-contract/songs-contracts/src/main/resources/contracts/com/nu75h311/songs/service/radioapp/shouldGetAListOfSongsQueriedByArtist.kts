@@ -1,11 +1,14 @@
 import org.springframework.cloud.contract.spec.ContractDsl.Companion.contract
+import org.springframework.cloud.contract.spec.withQueryParameters
 
 contract {
-    name = "GET all songs"
-    description = "Should get a list of all songs"
+    name = "Query songs by artist"
+    description = "Should get a list of songs queried by artist"
     request {
-        url = url("/songs")
         method = GET
+        urlPath = path("/songs") withQueryParameters {
+            parameter("artist", value(consumer(anyAlphaNumeric), producer("Rush")))
+        }
     }
     response {
         status = OK

@@ -11,7 +11,7 @@ plugins {
 
 group = "com.nu75h311"
 version = "0.0.1-SNAPSHOT"
-java.sourceCompatibility = JavaVersion.VERSION_17
+java.sourceCompatibility = JavaVersion.VERSION_11
 
 repositories {
     mavenCentral()
@@ -49,8 +49,8 @@ contracts {
     testFramework.set(org.springframework.cloud.contract.verifier.config.TestFramework.JUNIT5)
     contractDependency.stringNotation.set("com.nu75h311:songs-contracts:+:")
     contractsMode.set(org.springframework.cloud.contract.stubrunner.spring.StubRunnerProperties.StubsMode.LOCAL)
-    contractsPath.set("/")
-    basePackageForTests.set("com.nu75h311")
+    contractsPath.set("/com/nu75h311/songs/service")
+    basePackageForTests.set("com.nu75h311.songs.service")
     baseClassMappings.baseClassMapping(".*radioapp.*", "com.nu75h311.songs.service.RadioappBase")
 }
 
