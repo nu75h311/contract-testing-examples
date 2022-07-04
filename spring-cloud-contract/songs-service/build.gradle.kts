@@ -48,9 +48,11 @@ dependencies {
 contracts {
     testFramework.set(org.springframework.cloud.contract.verifier.config.TestFramework.JUNIT5)
     contractDependency.stringNotation.set("com.nu75h311:songs-contracts:+:")
+    // This can be configured to fetch the contracts jar from a remote source (instead of StubsMode.LOCAL)
     contractsMode.set(org.springframework.cloud.contract.stubrunner.spring.StubRunnerProperties.StubsMode.LOCAL)
-    contractsPath.set("/com/nu75h311/songs/service")
+    contractsPath.set("/com/nu75h311/songs/service/contracts")
     basePackageForTests.set("com.nu75h311.songs.service")
+    // At least one of these per consumer
     baseClassMappings.baseClassMapping(".*radioapp.*", "com.nu75h311.songs.service.RadioappBase")
 }
 
