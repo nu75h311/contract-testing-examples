@@ -20,12 +20,22 @@ internal class SongsServiceTest {
     lateinit var service: SongsService
 
     @Test
-    fun getSongNameListByArtist() {
+    fun getSongNameList() {
 
         val songList = service.getListOfSongNames()
 
-        assertAll("song names",
+        assertAll("all song names",
             { assertThat(songList).containsExactlyInAnyOrder("Sliver", "Xanadu") }
+        )
+    }
+
+    @Test
+    fun getSongNameListByArtist() {
+
+        val songList = service.getListOfSongNamesByArtist("Rush")
+
+        assertAll("song names by artist",
+            { assertThat(songList).containsExactlyInAnyOrder("Xanadu") }
         )
     }
 }

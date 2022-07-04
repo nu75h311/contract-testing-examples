@@ -13,4 +13,10 @@ class SongsService(val songsGateway: SongsGateway) {
         return songsResponse.map { song: Song -> song.name }
     }
 
+    fun getListOfSongNamesByArtist(artist: String): List<String> {
+        val songsResponse = songsGateway.getSongsByArtist(artist)
+
+        return songsResponse.map { song: Song -> song.name }
+    }
+
 }

@@ -8,7 +8,6 @@ import org.springframework.http.RequestEntity
 import org.springframework.stereotype.Component
 import org.springframework.web.client.RestTemplate
 import org.springframework.web.util.UriComponentsBuilder
-import java.net.URI
 
 @Component
 class SongsGateway(
@@ -17,13 +16,28 @@ class SongsGateway(
 ) {
 
     fun getSongs(): List<Song> {
-        val url: URI = UriComponentsBuilder
-            .fromHttpUrl(songsServiceBaseUrl).path("songs")
-//            .queryParam("artist", artist)
-            .encode().build().toUri()
 
         val songsServiceResponse = restTemplate.exchange(
-            RequestEntity<Any>(HttpMethod.GET, url),
+            RequestEntity<Any>(
+                HttpMethod.GET, UriComponentsBuilder
+                    .fromHttpUrl(songsServiceBaseUrl).path("songs")
+                    .encode().build().toUri()
+            ),
+            object : ParameterizedTypeReference<List<Song>>() {}
+        )
+
+        return songsServiceResponse.body!!
+    }
+
+    fun getSongsByArtist(artist: String): List<Song> {
+
+        val songsServiceResponse = restTemplate.exchange(
+            RequestEntity<Any>(
+                HttpMethod.GET, UriComponentsBuilder
+                    .fromHttpUrl(songsServiceBaseUrl).path("songs")
+                    .queryParam("artist", artist)
+                    .encode().build().toUri()
+            ),
             object : ParameterizedTypeReference<List<Song>>() {}
         )
 
