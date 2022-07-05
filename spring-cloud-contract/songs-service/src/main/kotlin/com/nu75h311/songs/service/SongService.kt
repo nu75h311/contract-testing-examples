@@ -5,11 +5,11 @@ import org.springframework.stereotype.Service
 @Service
 class SongService(val db: SongRepository) {
 
-    fun findSongs(): List<Song> = db.findAll().toList()
+    fun findSongs(): List<SongDTO> = db.findAll().map { convertToSongDTO(it) }
 
-    fun findSongsByArtist(artist: String): List<Song> = db.findAllByArtist(artist).toList()
+    fun findSongsByArtist(artist: String): List<SongDTO> = db.findAllByArtist(artist).map { convertToSongDTO(it) }
 
-    fun saveSong(song: Song) {
-        db.save(song)
+    fun saveSong(songDto: SongDTO) {
+        db.save(convertToSong(songDto))
     }
 }

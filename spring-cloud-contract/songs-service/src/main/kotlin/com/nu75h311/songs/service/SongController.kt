@@ -7,13 +7,13 @@ import org.springframework.web.bind.annotation.*
 class SongController(val service: SongService) {
 
     @GetMapping()
-    fun getSongs(@RequestParam artist: String?): List<Song> {
+    fun getSongs(@RequestParam artist: String?): List<SongDTO> {
         return if (artist == null) service.findSongs()
-        else service.findSongsByArtist(artist) //add this as an exercise
+        else service.findSongsByArtist(artist)
     }
 
     @PostMapping
-    fun post(@RequestBody song: Song) {
+    fun post(@RequestBody song: SongDTO) {
         service.saveSong(song)
     }
 }
