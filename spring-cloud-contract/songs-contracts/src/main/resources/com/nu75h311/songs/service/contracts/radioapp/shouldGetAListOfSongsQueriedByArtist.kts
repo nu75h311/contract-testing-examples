@@ -1,8 +1,5 @@
 import org.springframework.cloud.contract.spec.ContractDsl.Companion.contract
 import org.springframework.cloud.contract.spec.withQueryParameters
-import java.util.regex.Pattern
-
-val anyDuration: Pattern = Pattern.compile("((\\d+):)?([0-5]?\\d):([0-5]\\d)")
 
 contract {
     name = "Query songs by artist"
@@ -24,8 +21,7 @@ contract {
                 mapOf(
                     "id" to value(consumer("f170b830-0805-4366-9f15-0af7eae60531"), producer(anyUuid)),
                     "name" to value(consumer("Xanadu"), producer(anyNonEmptyString)),
-                    "artist" to value(consumer("Rush"), producer(anyNonEmptyString)),
-                    "duration" to value(consumer("11:04"), producer(anyDuration))
+                    "artist" to value(consumer("Rush"), producer(anyNonEmptyString))
                 )
             )
         )

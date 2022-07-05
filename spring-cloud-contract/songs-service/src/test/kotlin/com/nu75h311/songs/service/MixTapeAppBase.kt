@@ -9,7 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest
 import java.util.*
 
 @SpringBootTest
-class RadioappBase {
+class MixTapeAppBase {
 
     @Mock
     lateinit var songRepositoryMock: SongRepository

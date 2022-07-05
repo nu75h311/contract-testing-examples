@@ -1,11 +1,15 @@
-# Generate stubs for consumers
+# songs-contracts
+
+The repository holding all contracts for the songs-service (producer).
+
+## Generate stubs for consumers
 
 Gradle:  
 `./gradlew -b src/main/resources/com/nu75h311/songs/service/build.gradle.kts clean publishToMavenLocal`  
 Maven:  
 `./mvnw -f src/main/resources/com/nu75h311/songs/service/pom.xml clean install`
 
-# Generate jar with contracts
+## Generate jar with contracts
 
 Gradle:  
 `./gradlew clean publishToMavenLocal`  

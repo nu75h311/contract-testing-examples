@@ -53,7 +53,8 @@ contracts {
     contractsPath.set("/com/nu75h311/songs/service/contracts")
     basePackageForTests.set("com.nu75h311.songs.service")
     // At least one of these per consumer
-    baseClassMappings.baseClassMapping(".*radioapp.*", "com.nu75h311.songs.service.RadioappBase")
+    baseClassMappings.baseClassMapping(".*radioapp.*", "com.nu75h311.songs.service.RadioAppBase")
+    baseClassMappings.baseClassMapping(".*mixtapeapp.*", "com.nu75h311.songs.service.MixTapeAppBase")
 }
 
 tasks.withType<Test> {
