@@ -53,18 +53,12 @@ contracts {
     contractsPath.set("/com/nu75h311/songs/service/contracts")
     basePackageForTests.set("com.nu75h311.songs.service")
     // At least one of these per consumer
-    baseClassMappings.baseClassMapping(".*radioapp.*", "com.nu75h311.songs.service.RadioAppBase")
-    baseClassMappings.baseClassMapping(".*mixtapeapp.*", "com.nu75h311.songs.service.MixTapeAppBase")
+    baseClassMappings.baseClassMapping(".*radioapp.*", "com.nu75h311.songs.service.contracts.RadioAppBase")
+    baseClassMappings.baseClassMapping(".*mixtapeapp.*", "com.nu75h311.songs.service.contracts.MixTapeAppBase")
 }
 
 tasks.withType<Test> {
     useJUnitPlatform()
-}
-
-tasks.withType<Delete> {
-    doFirst {
-        delete("~/.m2/repository/com/nu75h311/songs-service")
-    }
 }
 
 tasks {
