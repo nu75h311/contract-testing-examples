@@ -32,8 +32,7 @@ class SongsServiceContractTests {
     fun toSongsExistState() {
         Mockito.`when`(songRepositoryMock.findAll()).thenReturn(
             mutableListOf(
-                Song(UUID.randomUUID(), "Xanadu", "Rush", 664),
-                Song(UUID.randomUUID(), "Lithium", "Nirvana", 257)
+                Song(UUID.randomUUID(), "Xanadu", "Rush", 664)
             )
         )
     }

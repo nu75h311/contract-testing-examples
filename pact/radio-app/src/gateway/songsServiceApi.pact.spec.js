@@ -1,7 +1,7 @@
 import path from "path";
-import {Pact} from "@pact-foundation/pact";
-import {SongsServiceApi} from "./songsServiceApi";
-import {eachLike} from "@pact-foundation/pact/src/dsl/matchers";
+import { Pact } from "@pact-foundation/pact";
+import { SongsServiceApi } from "./songsServiceApi";
+import { eachLike, regex, string, uuid } from "@pact-foundation/pact/src/dsl/matchers";
 
 const provider = new Pact({
     consumer: 'RadioApp',
@@ -36,9 +36,13 @@ describe("API Pact test", () => {
                         'Content-Type': 'application/json'
                     },
                     body: eachLike({
-                        id: "bf5505af-7418-4277-ad13-a43a9d9bbec7",
-                        name: "Lingus",
-                        artist: "Snarky Puppy"
+                        id: uuid("bf5505af-7418-4277-ad13-a43a9d9bbec7"),
+                        name: string("Lingus"),
+                        artist: string("Snarky Puppy"),
+                        duration: regex({
+                            matcher: "((\\d+):)?([0-5]?\\d):([0-5]\\d)",
+                            generate: "10:45"
+                        })
                     }),
                 },
             });
@@ -49,7 +53,7 @@ describe("API Pact test", () => {
             const songs = await api.getAllSongs();
 
             expect(songs).toStrictEqual([
-                {"id": "bf5505af-7418-4277-ad13-a43a9d9bbec7", "name": "Lingus", "artist": "Snarky Puppy"}
+                { "id": "bf5505af-7418-4277-ad13-a43a9d9bbec7", "name": "Lingus", "artist": "Snarky Puppy", "duration": "10:45" }
             ]);
         });
     });
