@@ -33,7 +33,7 @@ describe("API Pact test", () => {
                 willRespondWith: {
                     status: 200,
                     headers: {
-                        'Content-Type': 'application/json; charset=utf-8'
+                        'Content-Type': 'application/json'
                     },
                     body: eachLike({
                         id: "bf5505af-7418-4277-ad13-a43a9d9bbec7",
