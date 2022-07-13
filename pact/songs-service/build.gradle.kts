@@ -42,6 +42,13 @@ tasks.withType<Test> {
     useJUnitPlatform()
 }
 
+tasks.register("verifyContracts", Test::class) {
+    systemProperty("pact.verifier.publishResults", System.getProperty("publishPactVerification") != null)
+    systemProperty("pact.provider.version", version)
+    useJUnitPlatform()
+    include("**/songs/service/contracts/**")
+}
+
 tasks.withType<KotlinCompile> {
     kotlinOptions {
         freeCompilerArgs = listOf("-Xjsr305=strict")

@@ -5,6 +5,7 @@ build/
 !**/src/main/**/build/
 !**/src/test/**/build/
 **/pacts/
+**/resources/application-contract-test.properties
 
 ### STS ###
 .apt_generated

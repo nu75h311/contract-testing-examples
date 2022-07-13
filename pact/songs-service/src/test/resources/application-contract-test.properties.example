@@ -1,0 +1,2 @@
+pactbroker.url=https://<YOUR_PACT_BROKER_NAME>.pactflow.io
+pactbroker.auth.token=<YOUR_PACT_BROKER_TOKEN>

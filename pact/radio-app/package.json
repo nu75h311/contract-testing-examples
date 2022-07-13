@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "axios": "^0.27.2",
+    "dotenv": "^16.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
@@ -14,7 +15,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "test:pact": "react-scripts test --testTimeout 30000 pact.spec.js"
+    "test:pact": "react-scripts test --testTimeout 30000 pact.spec.js",
+    "posttest:pact": "node publish.pact.js"
   },
   "eslintConfig": {
     "extends": [
