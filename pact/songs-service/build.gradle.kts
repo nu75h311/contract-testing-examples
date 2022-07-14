@@ -43,8 +43,11 @@ tasks.withType<Test> {
 }
 
 tasks.register("verifyContracts", Test::class) {
-    systemProperty("pact.verifier.publishResults", System.getProperty("publishPactVerification") != null)
-    systemProperty("pact.provider.version", version)
+    if (System.getProperty("publishPactVerification") != null) {
+        println("=== Pact verification results will be published! ===")
+        systemProperty("pact.verifier.publishResults", "true")
+        systemProperty("pact.provider.version", version)
+    }
     useJUnitPlatform()
     include("**/songs/service/contracts/**")
 }
