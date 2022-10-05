@@ -54,7 +54,6 @@ contracts {
     basePackageForTests.set("com.nu75h311.songs.service")
     // At least one of these per consumer
     baseClassMappings.baseClassMapping(".*radioapp.*", "com.nu75h311.songs.service.contracts.RadioAppBase")
-    baseClassMappings.baseClassMapping(".*mixtapeapp.*", "com.nu75h311.songs.service.contracts.MixTapeAppBase")
 }
 
 tasks.withType<Test> {

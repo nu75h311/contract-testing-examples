@@ -23,15 +23,15 @@ class RadioAppBase {
 
         Mockito.`when`(songRepositoryMock.findAll()).thenReturn(
             mutableListOf(
-                Song(UUID.randomUUID(), "Xanadu", "Rush", 664),
-                Song(UUID.randomUUID(), "Lithium", "Nirvana", 257)
+                Song(UUID.randomUUID(), "Xanadu", "Rush"),
+                Song(UUID.randomUUID(), "Lithium", "Nirvana")
             )
         )
 
         Mockito.`when`(songRepositoryMock.findAllByArtist(anyString())).thenReturn(
             mutableListOf(
-                Song(UUID.randomUUID(), "Xanadu", "Rush", 664),
-                Song(UUID.randomUUID(), "XXY", "Rush", 265)
+                Song(UUID.randomUUID(), "Xanadu", "Rush"),
+                Song(UUID.randomUUID(), "XXY", "Rush")
             )
         )
 

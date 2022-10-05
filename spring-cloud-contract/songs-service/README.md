@@ -14,8 +14,7 @@ The producer service with the following endpoints:
   ```json
   {
     "name": "Name of the song",
-    "artist": "Name of the artist",
-    "duration": "1:23"
+    "artist": "Name of the artist"
   }
   ```
 

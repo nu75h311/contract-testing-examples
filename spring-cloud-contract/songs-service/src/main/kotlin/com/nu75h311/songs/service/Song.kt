@@ -8,6 +8,5 @@ import java.util.*
 data class Song(
     @Id val id: UUID?,
     val name: String,
-    val artist: String,
-    val duration: Int
+    val artist: String
 )
