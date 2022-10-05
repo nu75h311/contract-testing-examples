@@ -21,7 +21,7 @@ internal class SongsGatewayTest {
     lateinit var songsGateway: SongsGateway
 
     private val sliver = Song(
-        UUID.fromString("37808461-ca2c-47ee-849f-7367170efd25"), "Sliver", "Nirvana", "02:16"
+        UUID.fromString("37808461-ca2c-47ee-849f-7367170efd25"), "Sliver", "Nirvana", "2:16"
     )
     private val xanadu = Song(
         UUID.fromString("f170b830-0805-4366-9f15-0af7eae60531"), "Xanadu", "Rush", "11:04"
