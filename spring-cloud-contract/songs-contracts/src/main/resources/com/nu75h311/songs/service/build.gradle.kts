@@ -9,7 +9,7 @@ plugins {
 }
 
 group = "com.nu75h311"
-version = "0.0.1-SNAPSHOT" // not a stub of an official version
+version = "1.0.1-SNAPSHOT" // not a stub of an official version
 java.sourceCompatibility = JavaVersion.VERSION_11
 
 repositories {
