@@ -25,5 +25,5 @@ The producer service with the following endpoints:
 
 ## Contract tests
 
-- `./gradlew clean build` builds the app, generates the contract tests and run all tests.
+- `./gradlew clean build publishToMavenLocal` builds the app, generates the contract tests and run all tests.
 - `./gradlew generateContractTests` only generates the contract tests under `build/generated-test-sources/contractTest`.
