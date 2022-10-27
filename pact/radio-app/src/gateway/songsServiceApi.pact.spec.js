@@ -20,7 +20,7 @@ describe("API Pact test", () => {
     afterAll(() => provider.finalize());
 
     describe("getting all songs", () => {
-        test("songs exists", async () => {
+        test("successfully get songs list", async () => {
 
             // set up Pact interactions
             await provider.addInteraction({
