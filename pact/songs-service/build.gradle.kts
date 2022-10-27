@@ -47,6 +47,8 @@ tasks.register("verifyContracts", Test::class) {
         println("=== Pact verification results will be published! ===")
         systemProperty("pact.verifier.publishResults", "true")
         systemProperty("pact.provider.version", version)
+        systemProperty("pact.provider.branch", "main")
+        systemProperty("pact.provider.tag", "wip")
     }
     useJUnitPlatform()
     include("**/songs/service/contracts/**")

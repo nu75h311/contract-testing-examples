@@ -18,6 +18,7 @@ const opts = {
     pactBroker: pactBrokerUrl,
     pactBrokerToken: pactBrokerToken,
     tags: ['prod', 'test'],
+    branch: 'main',
     consumerVersion: require('./package.json').version
 };
 
