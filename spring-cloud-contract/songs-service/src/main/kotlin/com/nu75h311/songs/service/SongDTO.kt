@@ -19,7 +19,7 @@ fun convertToSongDTO(song: Song): SongDTO {
 
 private fun convertToStringDuration(durationInt: Int): String {
     val hours: Int = durationInt / 3600
-    val minutes: Int = durationInt / 60
+    val minutes: Int = (durationInt % 3600) / 60
     val seconds: Int = durationInt % 60
     if (hours == 0) {
         return "${minutes}:${seconds}"
